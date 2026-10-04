@@ -8,6 +8,11 @@ import './DashboardUI.css'
 const sidebarLinks = {
     admin: [
         { to: '/admin', label: 'Overview' },
+        { to: '/admin/students', label: 'Students' },
+        { to: '/admin/teachers', label: 'Teachers' },
+        { to: '/admin/classes', label: 'Classes' },
+        { to: '/admin/subjects', label: 'Subjects' },
+        { to: '/admin/announcements', label: 'Announcements' },
     ],
     teacher: [
         { to: '/teacher', label: 'Overview' },

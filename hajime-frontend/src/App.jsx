@@ -14,11 +14,27 @@ import AdminDashboard from './pages/dashboards/AdminDashboard'
 import TeacherDashboard from './pages/dashboards/TeacherDashboard'
 import StudentDashboard from './pages/dashboards/StudentDashboard'
 
+// Admin-only pages
+import TeachersPage from './pages/admin/TeachersPage'
+import ClassesPage from './pages/admin/ClassesPage'
+import SubjectsPage from './pages/admin/SubjectsPage'
+
+// Pages used by more than one role
+import StudentsPage from './pages/shared/StudentsPage'
+import AnnouncementsPage from './pages/shared/AnnouncementsPage'
+
 // Every dashboard page, with the role allowed to open it.
 // To add a page: add it here and add its link in components/DashboardLayout.jsx.
 const dashboardRoutes = [
   { path: '/admin', role: 'admin', page: <AdminDashboard /> },
+  { path: '/admin/students', role: 'admin', page: <StudentsPage /> },
+  { path: '/admin/teachers', role: 'admin', page: <TeachersPage /> },
+  { path: '/admin/classes', role: 'admin', page: <ClassesPage /> },
+  { path: '/admin/subjects', role: 'admin', page: <SubjectsPage /> },
+  { path: '/admin/announcements', role: 'admin', page: <AnnouncementsPage /> },
+
   { path: '/teacher', role: 'teacher', page: <TeacherDashboard /> },
+
   { path: '/student', role: 'student', page: <StudentDashboard /> },
 ]
 
