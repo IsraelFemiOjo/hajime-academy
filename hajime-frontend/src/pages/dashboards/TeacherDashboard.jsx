@@ -6,6 +6,7 @@ import Loading from '../../components/Loading'
 import ErrorMessage from '../../components/ErrorMessage'
 import useAuth from '../../hooks/useAuth'
 import useApiData from '../../hooks/useApiData'
+import { findMyTeacher, subjectsTaughtBy, classIdsOf } from '../../utils/teacher'
 
 // Shows "…" while a number is loading, and "—" if it could not load
 function countOf(request) {
@@ -18,7 +19,7 @@ function TeacherDashboard() {
     const { user } = useAuth()
 
     const students = useApiData('/api/students')
-    const classes = useApiData('/api/classes')
+    const teachers = useApiData('/api/teachers')
     const subjects = useApiData('/api/subjects')
     const announcements = useApiData('/api/announcements')
 
@@ -38,8 +39,8 @@ function TeacherDashboard() {
 
             <div className="stat-grid">
                 <StatCard label="Students" value={countOf(students)} to="/teacher/students" />
-                <StatCard label="Classes" value={countOf(classes)} />
-                <StatCard label="Subjects" value={countOf(subjects)} />
+                <StatCard label="My classes" value={subjects.data && teachers.data ? classIdsOf(subjectsTaughtBy(subjects.data, findMyTeacher(teachers.data, user))).size : '…'} />
+                <StatCard label="My subjects" value={subjects.data && teachers.data ? subjectsTaughtBy(subjects.data, findMyTeacher(teachers.data, user)).length : '…'} />
             </div>
 
             <section className="dashboard-panel">
