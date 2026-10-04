@@ -12,13 +12,22 @@ const sidebarLinks = {
         { to: '/admin/teachers', label: 'Teachers' },
         { to: '/admin/classes', label: 'Classes' },
         { to: '/admin/subjects', label: 'Subjects' },
+        { to: '/admin/attendance', label: 'Attendance' },
+        { to: '/admin/results', label: 'Results' },
         { to: '/admin/announcements', label: 'Announcements' },
     ],
     teacher: [
         { to: '/teacher', label: 'Overview' },
+        { to: '/teacher/students', label: 'Students' },
+        { to: '/teacher/attendance', label: 'Attendance' },
+        { to: '/teacher/results', label: 'Results' },
+        { to: '/teacher/announcements', label: 'Announcements' },
     ],
     student: [
         { to: '/student', label: 'Overview' },
+        { to: '/student/results', label: 'My results' },
+        { to: '/student/attendance', label: 'My attendance' },
+        { to: '/student/announcements', label: 'Announcements' },
     ],
 }
 
