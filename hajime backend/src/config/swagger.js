@@ -8,7 +8,11 @@ const swaggerDocument = {
       "API documentation for the Hajime Academy School Management System",
   },
 
-  servers: [
+ servers: [
+    {
+      url: "https://hajime-academy.onrender.com",
+      description: "Live server",
+    },
     {
       url: "http://localhost:3000",
       description: "Local development server",
