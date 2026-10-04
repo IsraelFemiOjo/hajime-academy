@@ -6,6 +6,7 @@ import apiRequest from '../../api/client'
 import useAuth from '../../hooks/useAuth'
 import useApiData from '../../hooks/useApiData'
 import { fullName, subjectName } from '../../utils/format'
+import { findMyTeacher, subjectsTaughtBy, classIdsOf } from '../../utils/teacher'
 
 const terms = ['First Term', 'Second Term', 'Third Term']
 
@@ -19,6 +20,7 @@ function ResultsPage() {
     const classes = useApiData('/api/classes')
     const subjects = useApiData('/api/subjects')
     const students = useApiData('/api/students')
+    const teachers = useApiData(isAdmin ? null : '/api/teachers')
 
     const [classId, setClassId] = useState('')
     const [subjectId, setSubjectId] = useState('')
@@ -39,9 +41,12 @@ function ResultsPage() {
     const [editScore, setEditScore] = useState('')
     const [actionError, setActionError] = useState('')
 
-    const classList = classes.data || []
+    // Admins see every subject; a teacher sees only the subjects assigned to them
+    const allowedSubjects = isAdmin ? subjects.data || [] : subjectsTaughtBy(subjects.data, findMyTeacher(teachers.data, user))
+    const allowedClassIds = classIdsOf(allowedSubjects)
+    const classList = (classes.data || []).filter((schoolClass) => isAdmin || allowedClassIds.has(schoolClass._id))
     const selectedClass = classList.find((schoolClass) => schoolClass._id === classId)
-    const classSubjects = (subjects.data || []).filter((subject) => subject.className?._id === classId)
+    const classSubjects = allowedSubjects.filter((subject) => subject.className?._id === classId)
 
     const classStudents = selectedClass
         ? (students.data || [])
