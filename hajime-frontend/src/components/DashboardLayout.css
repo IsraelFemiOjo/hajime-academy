@@ -1,0 +1,102 @@
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: calc(100vh - 72px);
+    background-color: #eef1f4;
+}
+
+.dashboard-sidebar {
+    padding: 28px 20px;
+    background-color: #102a43;
+    color: #ffffff;
+}
+
+.dashboard-sidebar h2 {
+    margin: 0 0 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.dashboard-nav {
+    display: grid;
+    gap: 6px;
+}
+
+.dashboard-sidebar a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dashboard-sidebar a:hover,
+.dashboard-sidebar a.active {
+    background-color: #1e88e5;
+}
+
+.dashboard-main {
+    /* min-width: 0 lets wide tables scroll inside their box
+       instead of stretching the whole page */
+    min-width: 0;
+    padding: 32px;
+}
+
+/* White box for dashboard content, the same style as the rest of the site.
+   Members 2 and 3 can use className="dashboard-panel" for their sections. */
+.dashboard-panel {
+    padding: 36px 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 12px 32px rgba(31, 41, 55, 0.06);
+}
+
+.dashboard-panel h1 {
+    margin: 0 0 12px;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.dashboard-panel p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+@media (max-width: 760px) {
+    .dashboard-layout {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-rows: auto 1fr;
+    }
+
+    .dashboard-sidebar {
+        padding: 20px 16px;
+    }
+
+    .dashboard-sidebar h2 {
+        margin-bottom: 12px;
+    }
+
+    /* Links sit side by side on phones instead of one per line */
+    .dashboard-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .dashboard-sidebar a {
+        padding: 9px 12px;
+    }
+
+    .dashboard-main {
+        padding: 20px 16px;
+    }
+
+    .dashboard-panel {
+        padding: 24px 20px;
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,135 @@
+.home-page {
+  background-color: #eef1f4;
+  color: #1f2937;
+}
+
+/* Hero: full-width school photograph with a short caption */
+.home-hero {
+  min-height: 540px;
+  display: flex;
+  align-items: flex-end;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* The hero text and the box below share the same width,
+   so their left edges line up with the navbar logo */
+.home-hero-inner,
+.home-content {
+  width: min(1152px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.home-hero-inner {
+  padding: 0 0 56px;
+}
+
+.home-hero h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(2rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.home-hero-text {
+  margin: 10px 0 0;
+  color: #e6eef5;
+  font-size: 1.1rem;
+}
+
+.home-hero-actions {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+.home-login-button {
+  min-height: 48px;
+  padding: 0 28px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #1e88e5;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.home-login-button:hover {
+  background-color: #1976d2;
+}
+
+.home-register-note {
+  margin: 0;
+  color: #e6eef5;
+}
+
+.home-register-note a {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* White box on the grey page, the same style as the login panel */
+.home-content {
+  padding: 40px 0 56px;
+}
+
+.home-box {
+  padding: 44px 48px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 12px 32px rgba(31, 41, 55, 0.06);
+}
+
+.home-box h2 {
+  margin: 0 0 14px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.home-box p {
+  max-width: 720px;
+  margin: 0 0 16px;
+  color: #4b5563;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.home-text-link {
+  color: #1976d2;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    min-height: 480px;
+    background-position: 30% 30%;
+  }
+
+  .home-hero-inner,
+  .home-content {
+    width: calc(100% - 32px);
+  }
+
+  .home-hero-inner {
+    padding-bottom: 40px;
+  }
+
+  .home-login-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-content {
+    padding: 24px 0 40px;
+  }
+
+  .home-box {
+    padding: 28px 22px;
+    border-radius: 16px;
+  }
+}

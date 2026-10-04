@@ -1,0 +1,556 @@
+/* Shared styles for dashboard pages: page headings, buttons,
+   forms and tables. Loaded by DashboardLayout, so every dashboard page can use them. */
+
+/* ---------- Page heading ---------- */
+.page-header {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.page-header p {
+    margin: 6px 0 0;
+    color: #4b5563;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    min-height: 42px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #1e88e5;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #1976d2;
+}
+
+.btn:disabled {
+    background-color: #90caf9;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    border-color: #d1d5db;
+    background-color: #ffffff;
+    color: #1f2937;
+}
+
+.btn-secondary:hover {
+    background-color: #f3f4f6;
+}
+
+/* Small text buttons used inside table rows */
+.link-button {
+    padding: 4px 6px;
+    border: none;
+    background: none;
+    color: #1976d2;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+.link-button-danger {
+    color: #b91c1c;
+}
+
+/* ---------- Forms ---------- */
+.form-panel {
+    margin-bottom: 24px;
+}
+
+.form-panel h2 {
+    margin: 0 0 20px;
+    font-size: 1.25rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 20px;
+}
+
+.form-field {
+    display: grid;
+    /* Keep label and box at the top, even when the field beside it has a note */
+    align-content: start;
+    gap: 6px;
+}
+
+/* A field that takes the full width of the form */
+.form-field-wide {
+    grid-column: 1 / -1;
+}
+
+.form-field label {
+    color: #374151;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea,
+.search-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus,
+.search-input:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+}
+
+.form-actions {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.form-panel .error-message {
+    margin-top: 20px;
+}
+
+/* ---------- Search above a table ---------- */
+.table-toolbar {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.search-input {
+    max-width: 360px;
+}
+
+.table-count {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* ---------- Tables ---------- */
+/* On narrow screens the table scrolls sideways inside its box */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.data-table th,
+.data-table td {
+    padding: 12px 14px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.data-table th {
+    background-color: #f3f6f9;
+    color: #374151;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.data-table th:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.data-table th:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.data-table tbody tr + tr td {
+    border-top: 1px solid #eef1f4;
+}
+
+.table-actions {
+    display: flex;
+    gap: 4px;
+}
+
+/* Shown when a list has nothing in it */
+.empty-state {
+    padding: 32px 16px;
+    color: #6b7280;
+    text-align: center;
+}
+
+/* ---------- Status labels ---------- */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.status-active {
+    background-color: #e6f4ea;
+    color: #1e7a3c;
+}
+
+.status-inactive {
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+.status-neutral,
+.status-draft {
+    background-color: #f3f4f6;
+    color: #4b5563;
+}
+
+.status-published,
+.status-present {
+    background-color: #e6f4ea;
+    color: #1e7a3c;
+}
+
+.status-absent {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.status-late {
+    background-color: #fff7e6;
+    color: #a15c07;
+}
+
+.status-excused {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+/* Grades: A–C green, D–E amber, F red */
+.grade-A,
+.grade-B,
+.grade-C {
+    background-color: #e6f4ea;
+    color: #1e7a3c;
+}
+
+.grade-D,
+.grade-E {
+    background-color: #fff7e6;
+    color: #a15c07;
+}
+
+.grade-F {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+/* A heading that splits a long form into parts, e.g. "Portal login" */
+.form-section-title {
+    grid-column: 1 / -1;
+    margin: 12px 0 0;
+    padding-top: 20px;
+    border-top: 1px solid #eef1f4;
+    font-size: 1rem;
+}
+
+/* ---------- Small helper text under a field ---------- */
+.field-note {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.form-actions .field-note {
+    font-size: 0.95rem;
+}
+
+/* Shows what will be saved, e.g. "Class name: JSS 1A" */
+.form-preview {
+    margin: 20px 0 0;
+    color: #4b5563;
+}
+
+/* Green confirmation after saving */
+.success-message {
+    margin: 20px 0 0;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background-color: #e6f4ea;
+    color: #1e7a3c;
+    font-weight: 600;
+}
+
+/* Blue information box, e.g. "Your account is not linked yet" */
+.notice-box {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background-color: #e3f2fd;
+    color: #0d3c61;
+    line-height: 1.6;
+}
+
+.notice-box p {
+    margin: 0;
+}
+
+.notice-box .notice-title {
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+/* ---------- Header buttons (e.g. "Mark attendance") ---------- */
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ---------- Class / date / term pickers above a table ---------- */
+.filter-bar {
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.summary-row {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.summary-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Small inputs inside table rows */
+.table-select,
+.table-input {
+    padding: 8px 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.table-input {
+    width: 180px;
+}
+
+.table-input-small {
+    width: 90px;
+}
+
+.table-select:focus,
+.table-input:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+}
+
+/* ---------- Overview number boxes ---------- */
+.stat-grid {
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    padding: 24px;
+    display: block;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 12px 32px rgba(31, 41, 55, 0.06);
+    color: #1f2937;
+    text-decoration: none;
+}
+
+a.stat-card:hover {
+    box-shadow: 0 0 0 2px #1e88e5;
+}
+
+.stat-label {
+    margin: 0;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.stat-value {
+    margin: 8px 0 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Heading row inside a white panel, with a link on the right */
+.panel-heading {
+    margin-bottom: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.dashboard-panel .panel-heading h2,
+.profile-panel h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.text-link {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+/* ---------- Student "My details" box ---------- */
+.profile-panel {
+    margin-bottom: 24px;
+}
+
+.detail-list {
+    margin: 16px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.detail-list dt {
+    color: #6b7280;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.detail-list dd {
+    margin: 4px 0 0;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+/* ---------- Announcements ---------- */
+.announcement-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.announcement-item {
+    padding: 20px 0;
+}
+
+.announcement-item + .announcement-item {
+    border-top: 1px solid #eef1f4;
+}
+
+.announcement-item:first-child {
+    padding-top: 0;
+}
+
+.announcement-top,
+.announcement-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
+}
+
+.announcement-top h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.announcement-badges {
+    display: flex;
+    gap: 8px;
+}
+
+.dashboard-panel .announcement-message {
+    margin: 10px 0;
+    color: #4b5563;
+    line-height: 1.6;
+    white-space: pre-line;
+}
+
+.dashboard-panel .announcement-date {
+    margin: 0;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+@media (max-width: 760px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .stat-value {
+        font-size: 1.6rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        max-width: none;
+    }
+}

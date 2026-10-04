@@ -1,0 +1,143 @@
+/* Shared by Login, Register and NotFound */
+.auth-page {
+    min-height: calc(100vh - 72px);
+    padding: 56px 16px;
+    background-color: #eef1f4;
+    color: #1f2937;
+}
+
+/* Crash page has no navbar above it, so it fills the whole screen */
+.auth-page-full {
+    min-height: 100vh;
+}
+
+.auth-panel {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 48px 44px 40px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04), 0 12px 32px rgba(31, 41, 55, 0.06);
+}
+
+/* Logo, title and subtitle stacked in the middle */
+.auth-header {
+    text-align: center;
+}
+
+.auth-logo {
+    width: 72px;
+    height: 72px;
+}
+
+.auth-header h1 {
+    margin: 24px 0 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.auth-intro {
+    margin: 10px 0 0;
+    color: #6b7280;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.auth-form {
+    margin-top: 36px;
+    display: grid;
+    gap: 10px;
+}
+
+/* Labels centred, like her page; each label sits close to its box,
+   with a bigger gap before the next field */
+.auth-form label {
+    margin-top: 18px;
+    color: #374151;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.auth-form label:first-child {
+    margin-top: 0;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #1f2937;
+    font-family: inherit;
+    font-size: 1.05rem;
+}
+
+.auth-form input::placeholder {
+    color: #9ca3af;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #1e88e5;
+    box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.15);
+}
+
+.auth-button {
+    width: 100%;
+    min-height: 54px;
+    margin-top: 24px;
+    padding: 0 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e88e5;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    background-color: #1976d2;
+}
+
+/* Greyed out while the request is being sent */
+.auth-button:disabled {
+    background-color: #90caf9;
+    cursor: not-allowed;
+}
+
+/* Error box sits a little below the last input */
+.auth-form .error-message {
+    margin-top: 14px;
+}
+
+.auth-switch {
+    margin: 24px 0 0;
+    color: #6b7280;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.auth-switch a {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .auth-page {
+        padding: 32px 16px;
+    }
+
+    .auth-panel {
+        padding: 32px 20px 24px;
+        border-radius: 16px;
+    }
+}

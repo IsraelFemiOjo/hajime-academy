@@ -1,0 +1,27 @@
+.error-message {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.error-message p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.error-retry {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid #b91c1c;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #b91c1c;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error-retry:hover {
+  background-color: #fee2e2;
+}

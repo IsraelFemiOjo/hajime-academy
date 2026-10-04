@@ -1,0 +1,88 @@
+.site-header {
+    background-color: #102a43;
+}
+
+.navbar {
+    max-width: 1200px;
+    min-height: 72px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+}
+
+.navbar-crest {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+}
+
+.navbar-brand-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.navbar-links a {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.navbar-links a:hover {
+    color: #90caf9;
+}
+
+.navbar-links .register-link {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1e88e5;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: inherit;
+    cursor: pointer;
+}
+
+.navbar-links .register-link:hover {
+    background-color: #1976d2;
+    color: #ffffff;
+}
+
+.navbar-links a:focus-visible,
+.navbar-links button:focus-visible {
+    outline: 2px solid #90caf9;
+    outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        padding: 16px 20px;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .navbar-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
