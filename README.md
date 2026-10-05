@@ -34,7 +34,7 @@ The backend is on Render's free plan, so the first request after a period of no 
 - **Olachi Okafor** – Authentication and authorization, announcements, and combining and uploading the full backend
 - **Abiola Abiodun** – Teacher, class and subject management
 - **Chimuanya JB Okoye** – Student management
-- **Isang** – Attendance
+- **Isang Udemeobong** – Attendance
 - **Leeroy Isibor** – Results, grades and result history
 - **Winner Chatkazzah Patrick** – Integration, validation, security and documentation
 
