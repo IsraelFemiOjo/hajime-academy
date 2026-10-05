@@ -1,6 +1,7 @@
 # Hajime Academy – School Management Portal
 
 A full-stack school management portal for secondary schools. Admins manage students, teachers, classes and subjects. Teachers mark attendance and enter results. Students log in to see their own results, attendance and school announcements.
+<!-- Contributor: Okoye Chimuanya -->
 
 ## Live links
 - Live site: https://hajime-academy.vercel.app
